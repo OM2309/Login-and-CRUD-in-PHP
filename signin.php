@@ -36,6 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
     <div class="wrapper">
        <h1>Register <span style="color:rgb(17, 107, 143); font-weight:bold">Form</span></h1>
       <form action='signin.php' method='post'>
