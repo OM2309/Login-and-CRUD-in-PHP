@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+session_start();
+
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +15,7 @@
 <body>
   <div class="container flex items-center justify-around py-8 bg-[#dfe9f5] font-medium">
     <div class="left">
-           STUDENT
+           <?php echo $_SESSION['name'];?>
     </div>
     <div class="middle">
         <ul class="cursor-pointer">
@@ -19,7 +25,7 @@
         </ul>
     </div>
     <div class="right">
-        <button>Logout</button>
+        <a href="logout.php">Logout</a>
     </div>
   </div>
 </body>

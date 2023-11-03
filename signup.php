@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include('connection.php'); // Include your database connection file.
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -8,10 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    
     $sql = "SELECT * FROM `signin` WHERE `email` = '$email' AND `password` = '$password'";
     $result = mysqli_query($conn, $sql);
-
+    $res = mysqli_fetch_assoc($result);
+    $_SESSION['name'] = $res['name'];
     if (mysqli_num_rows($result) == 1) {
-      
-      echo "<script>alert('Login successfully');</script>";
+    echo "<script>alert('Login successfully');</script>";
       echo "<script>setTimeout(function(){ window.location.href='index.php'; }, 1000);</script>";
         exit;
     } else {
