@@ -58,19 +58,20 @@ session_start();
       <tbody>
 
       <?php
+      $count = 1;
         $sql = "SELECT * FROM signin";
         $result = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($result)) { // Use mysqli_fetch_assoc to fetch rows as an associative array.
         ?>
           <tr>
-            <td><?php echo $row['id']; ?></td>
+            <td><?php echo $count++ ?></td>
             <td><?php echo $row['name']; ?></td> 
             <td><?php echo $row['email']; ?></td>
             <td><?php echo $row['password']; ?></td>
             <td>
-              <a href="#" class="text-blue-600 hover:underline font-medium">Edit</a>
-              <a href="#" class="text-red-600 hover:underline font-medium">Delete</a>
-            </td>
+    <a href="#" class="text-blue-600 hover:underline font-medium">Edit</a>
+    <a href="delete.php?id=<?php echo ($row['id']); ?>" class="text-red-600 hover:underline font-medium">Delete</a>
+  </td>
           </tr>
         <?php
         }
