@@ -3,11 +3,13 @@ include('connection.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $email = $_POST['email'];
+    $course = $_POST['course'];
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
 
+
     if ($password == $cpassword) {
-        $sql = "INSERT INTO `signin` (`name`, `email`, `password`, `cpassword`) VALUES ('$name', '$email', '$password', '$cpassword')";
+        $sql = "INSERT INTO `signin` (`name`, `email`, `password`, `cpassword`, `course`) VALUES ('$name', '$email', '$password', '$cpassword', '$course')";
         $res = mysqli_query($conn, $sql);
         
         if ($res) {
@@ -39,6 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <form action='signin.php' method='post'>
         <input type="text" placeholder="Name" name="name" >
         <input type="text" placeholder="Email" name="email">
+        <select name="course" class="form-control">
+            <option value="">--Select Gender--</option>
+             <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
         <input type="text" placeholder="Password" name="password">
         <input type="text" placeholder="Confirm Password" name="cpassword" >
         <button type="submit">Register</button>

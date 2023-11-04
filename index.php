@@ -51,6 +51,7 @@ session_start();
           <th>ID</th>
           <th>Name</th>
           <th>Email</th>
+          <th>Course</th>
           <th>Password</th>
           <th>Action</th>
         </tr>
@@ -67,6 +68,7 @@ session_start();
             <td><?php echo $count++ ?></td>
             <td><?php echo $row['name']; ?></td> 
             <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['course']; ?></td>
             <td><?php echo $row['password']; ?></td>
             <td>
     <a href="edit.php?id=<?php echo ($row['id']); ?>" class="text-blue-600 hover:underline font-medium">Edit</a>
