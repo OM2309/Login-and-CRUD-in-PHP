@@ -69,7 +69,7 @@ session_start();
             <td><?php echo $row['email']; ?></td>
             <td><?php echo $row['password']; ?></td>
             <td>
-    <a href="#" class="text-blue-600 hover:underline font-medium">Edit</a>
+    <a href="edit.php?id=<?php echo ($row['id']); ?>" class="text-blue-600 hover:underline font-medium">Edit</a>
     <a href="delete.php?id=<?php echo ($row['id']); ?>" class="text-red-600 hover:underline font-medium">Delete</a>
   </td>
           </tr>
